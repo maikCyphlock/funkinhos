@@ -1,0 +1,9 @@
+{
+    "ts-standard": {
+
+      "project": "./tsconfig.json"
+    },
+    "compilerOptions": {
+      "strictNullChecks": true
+    }
+  }

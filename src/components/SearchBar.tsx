@@ -1,5 +1,3 @@
-import { ChangeEvent, useState } from 'react'
-
 import algoliasearch from 'algoliasearch/lite'
 import {
   InstantSearch,
@@ -11,14 +9,7 @@ import {
   Pagination
 } from 'react-instantsearch-hooks-web'
 
-type funko = {
-  handle: string
-  title: string
-  imageName: string
-  series: string[]
-}
-
-function Hit ({ hit }: { hit: any }) {
+function Hit ({ hit }: { hit: any }): JSX.Element {
   return (
     <article className='border sm:max-w-md h-72 rounded m-4 flex flex-col items-center justify-center gap-2 px-4 py-2'>
       <img
@@ -31,7 +22,7 @@ function Hit ({ hit }: { hit: any }) {
         {hit.series.map((element: string, key: number) => (
           <li key={key}>
             <small
-              className={`bg-purple-100 text-purple-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-purple-200 dark:text-purple-900"`}
+              className='bg-purple-100 text-purple-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-purple-200 dark:text-purple-900'
             >
               {element}
             </small>
@@ -45,7 +36,7 @@ function Hit ({ hit }: { hit: any }) {
   )
 }
 
-function SearchBar ({ APP_ID, APP_KEY }: { APP_ID: string; APP_KEY: string }) {
+function SearchBar ({ APP_ID, APP_KEY }: { APP_ID: string, APP_KEY: string }): JSX.Element {
   const searchClient = algoliasearch(APP_ID, APP_KEY)
 
   return (

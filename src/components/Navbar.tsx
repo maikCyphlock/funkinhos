@@ -1,11 +1,11 @@
 import { useState, useRef, MutableRefObject } from 'react'
 
-function Navbar () {
+function Navbar (): JSX.Element {
   const [show, SetShow] = useState(false)
   const classToggleElement: MutableRefObject<HTMLDivElement | null> = useRef(
     null
   )
-  const clickToggleHandler = () => {
+  const clickToggleHandler = (): void => {
     console.log(classToggleElement.current?.classList?.toggle('hidden'))
     SetShow(prev => !prev)
   }
@@ -39,7 +39,7 @@ function Navbar () {
               fillRule='evenodd'
               d='M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z'
               clipRule='evenodd'
-            ></path>
+            />
           </svg>
         </button>
         <div
